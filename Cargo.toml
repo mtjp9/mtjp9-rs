@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = ["crates/mtjp9-rs-auth0-client"]
+
+[workspace.metadata.spellcheck]
+config = "spellcheck.toml"
+
+[workspace.package]
+rust-version = "1.88.0"

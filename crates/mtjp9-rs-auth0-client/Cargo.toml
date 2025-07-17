@@ -1,0 +1,29 @@
+[package]
+name = "mtjp9-rs-auth0-client"
+version = "0.1.0"
+categories = ["Authentication"]
+keywords = ["auth", "auth0", "framework"]
+authors = [
+  "Yuki Tanaka <matakitanakajp@gmail.com>",
+  "Yuki Tanaka <y-tanaka@ohmylike.jp>",
+]
+description = "Auth0 is a simple and easy-to-use authentication and authorization framework for Rust."
+repository = "https://github.com/mtjp9/mtjp9-rs"
+homepage = "https://github.com/mtjp9/mtjp9-rs"
+readme = "README.md"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = { workspace = true }
+
+[dependencies]
+tokio = { version = "1.0.0", features = ["macros", "rt-multi-thread"] }
+thiserror = "2.0.12"
+reqwest = { version = "0.12.22", features = ["json"] }
+rand = { version = "0.9.1" }
+serde_json = "1"
+serde = { version = "1", features = ["derive"] }
+dotenvy = { version = "0.15.7" }
+
+[dev-dependencies]
+mockito = "1.7.0"
+tokio-test = "0.4"
