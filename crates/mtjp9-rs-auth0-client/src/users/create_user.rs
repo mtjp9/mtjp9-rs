@@ -28,9 +28,11 @@
 // !     Ok(())
 // ! }
 //! ```
-use crate::domain::Domain;
-use crate::error::{Auth0Error, Result};
-use crate::token::BearerToken;
+use crate::{
+    domain::Domain,
+    error::{Auth0Error, Result},
+    token::BearerToken,
+};
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;

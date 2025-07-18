@@ -3,6 +3,8 @@ use rand::{distr::Alphanumeric, Rng};
 pub mod domain;
 pub mod error;
 pub mod oauth;
+pub mod organizations;
+pub mod tickets;
 pub mod token;
 pub mod users;
 
