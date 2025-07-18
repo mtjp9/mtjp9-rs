@@ -1,8 +1,8 @@
 [package]
 name = "mtjp9-rs-auth0-client"
 version = "0.1.0"
-categories = ["Authentication"]
-keywords = ["auth", "auth0", "framework"]
+categories = ["authentication"]
+keywords = ["auth0"]
 authors = [
   "Yuki Tanaka <matakitanakajp@gmail.com>",
   "Yuki Tanaka <y-tanaka@ohmylike.jp>",
