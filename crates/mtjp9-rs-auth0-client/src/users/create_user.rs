@@ -21,6 +21,7 @@
 // !         .password("SecureP@ssword123!")
 // !         .given_name("John")
 // !         .family_name("Doe")
+// !         .verify_email(true)
 // !         .build()?;
 // !
 // !     let user = create_user(&domain, &token, req).await?;
@@ -96,6 +97,10 @@ pub struct CreateUserRequest {
     /// Whether the user is blocked.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub blocked: Option<bool>,
+
+    /// Whether to send a verification email to the user.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub verify_email: Option<bool>,
 }
 
 impl CreateUserRequest {
@@ -121,6 +126,7 @@ pub struct CreateUserRequestBuilder {
     user_metadata: Option<Value>,
     app_metadata: Option<Value>,
     blocked: Option<bool>,
+    verify_email: Option<bool>,
 }
 
 impl CreateUserRequestBuilder {
@@ -199,6 +205,11 @@ impl CreateUserRequestBuilder {
         self
     }
 
+    pub fn verify_email(mut self, verify_email: bool) -> Self {
+        self.verify_email = Some(verify_email);
+        self
+    }
+
     pub fn build(self) -> Result<CreateUserRequest> {
         let email = self
             .email
@@ -230,6 +241,7 @@ impl CreateUserRequestBuilder {
             user_metadata: self.user_metadata,
             app_metadata: self.app_metadata,
             blocked: self.blocked,
+            verify_email: self.verify_email,
         })
     }
 }
@@ -368,6 +380,7 @@ mod tests {
             .user_metadata(json!({"favorite_color": "blue"}))
             .app_metadata(json!({"roles": ["user"]}))
             .blocked(false)
+            .verify_email(true)
             .build();
 
         assert!(req.is_ok());
@@ -389,6 +402,7 @@ mod tests {
         assert_eq!(req.user_metadata, Some(json!({"favorite_color": "blue"})));
         assert_eq!(req.app_metadata, Some(json!({"roles": ["user"]})));
         assert_eq!(req.blocked, Some(false));
+        assert_eq!(req.verify_email, Some(true));
     }
 
     #[test]
