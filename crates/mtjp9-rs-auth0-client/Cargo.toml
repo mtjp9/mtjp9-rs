@@ -1,6 +1,6 @@
 [package]
 name = "mtjp9-rs-auth0-client"
-version = "0.1.10"
+version = "0.1.11"
 categories = ["authentication"]
 keywords = ["auth0"]
 authors = [
