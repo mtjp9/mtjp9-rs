@@ -221,6 +221,7 @@ mod tests {
                 connection_id: "con_456".to_string(),
                 assign_membership_on_login: false,
                 show_as_button: true,
+                is_signup_enabled: false,
             }]),
             ..Default::default()
         };

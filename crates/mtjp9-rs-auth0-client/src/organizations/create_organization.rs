@@ -113,6 +113,9 @@ pub struct EnabledConnection {
     /// Whether to show the connection as a button
     #[serde(default)]
     pub show_as_button: bool,
+
+    #[serde(default)]
+    pub is_signup_enabled: bool,
 }
 
 /// Response from creating or fetching an organization
@@ -273,6 +276,7 @@ mod tests {
                 connection_id: "con_123".to_string(),
                 assign_membership_on_login: true,
                 show_as_button: true,
+                is_signup_enabled: false,
             }]),
         };
 
