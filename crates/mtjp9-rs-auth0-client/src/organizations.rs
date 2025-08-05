@@ -4,8 +4,10 @@
 
 mod create_organization;
 mod patch_organization;
+mod post_members;
 
 pub use create_organization::{
     create_organization, CreateOrganizationRequest, OrganizationResponse,
 };
 pub use patch_organization::{patch_organization, PatchOrganizationRequest};
+pub use post_members::{post_members, AddMembersRequest};
